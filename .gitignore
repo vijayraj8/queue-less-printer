@@ -1,0 +1,7 @@
+﻿.venv/
+__pycache__/
+uploads/
+print_output/
+*.pyc
+.env
+queue_less_printer_qr.png
