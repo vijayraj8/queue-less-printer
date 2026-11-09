@@ -1,0 +1,244 @@
+{
+  "typography": {
+    "font_family_heading": "Outfit, system-ui, sans-serif",
+    "font_family_body": "Plus Jakarta Sans, system-ui, sans-serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 24,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "Outfit with tracking-tight and font-semibold or font-bold",
+      "body": "Plus Jakarta Sans with leading-relaxed and tracking-normal",
+      "labels": "Plus Jakarta Sans with uppercase, tracking-[0.15em], text-xs font-semibold",
+      "monospaced_data": "JetBrains Mono for token IDs, price breakdowns, countdown timer, page ranges, and file hashes"
+    }
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#0B0F19",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#111827",
+        "on_bg": "#F9FAFB",
+        "on_bg_muted": "#9CA3AF"
+      },
+      {
+        "name": "panel_highlight",
+        "kind": "solid",
+        "bg": "#1E293B",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1"
+      },
+      {
+        "name": "kiosk_dock",
+        "kind": "solid",
+        "bg": "#0D1526",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "kiosk_display_light",
+        "kind": "solid",
+        "bg": "#F8FAFC",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#475569"
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#475569"
+      },
+      {
+        "name": "hero",
+        "kind": "gradient",
+        "contrast_against": "#0B0F19",
+        "guarantee": "Radial ambient dark mesh: radial-gradient(circle at 50% 0%, rgba(37,99,235,0.18), transparent 70%), linear-gradient(180deg, #0B0F19 0%, #111827 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#60A5FA",
+          "error": "#F87171",
+          "success": "#34D399"
+        }
+      },
+      {
+        "name": "glass_header",
+        "kind": "glass",
+        "contrast_against": "#0B0F19",
+        "guarantee": "backdrop-blur-xl bg-slate-950/80 border-b border-slate-800/80 shadow-sm",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "price_card",
+        "kind": "solid",
+        "bg": "#091E3A",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#93C5FD",
+        "roles": {
+          "link": "#60A5FA",
+          "error": "#FCA5A5",
+          "success": "#6EE7B7"
+        }
+      },
+      {
+        "name": "timer_chip",
+        "kind": "solid",
+        "bg": "#2A1515",
+        "on_bg": "#FCA5A5",
+        "on_bg_muted": "#F87171"
+      },
+      {
+        "name": "badge_bw",
+        "kind": "solid",
+        "bg": "#1E293B",
+        "on_bg": "#E2E8F0",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "badge_color",
+        "kind": "solid",
+        "bg": "#1E1B4B",
+        "on_bg": "#C7D2FE",
+        "on_bg_muted": "#A5B4FC"
+      }
+    ],
+    "accent": "#2563EB",
+    "on_accent": "#FFFFFF",
+    "accent_emerald": "#059669",
+    "on_accent_emerald": "#FFFFFF",
+    "accent_amber": "#D97706",
+    "on_accent_amber": "#FFFFFF"
+  },
+  "entry_surfaces": {
+    "/": "split hero kiosk landing — QR code & step tracker left, drag-and-drop instant PDF upload + live pricing calculator preview right"
+  },
+  "design_archetype": {
+    "name": "Performance Pro meets High-End Utility Kiosk",
+    "description": "Tactical precision dark-navy command interface paired with high-contrast emerald & electric blue triggers, crisp micro-borders, and live visual print calculators tailored for students and busy print-shop patrons in India.",
+    "border_radius": "rounded-2xl for main cards, rounded-xl for interactive inputs/options, rounded-full for status pills"
+  },
+  "pricing_model_rules": {
+    "currency": "INR (₹)",
+    "rates": {
+      "bw_per_page": 2,
+      "color_per_page": 10
+    },
+    "calculation_formula": "Price = Selected Pages Count × Cost per Page Mode (₹2 or ₹10) × Number of Copies (1-20). Note: Double-sided printing halves sheets used (ceil(pages/2)), while price remains based on total printed pages."
+  },
+  "stepper_workflow": [
+    {
+      "step": 1,
+      "id": "upload",
+      "title": "Upload PDF",
+      "subtitle": "Max 10 MB, standard PDF",
+      "badge": "Instant Scan"
+    },
+    {
+      "step": 2,
+      "id": "pages",
+      "title": "Select Pages",
+      "subtitle": "All, range (1-5), or custom (1,3,5)",
+      "badge": "Auto-Count"
+    },
+    {
+      "step": 3,
+      "id": "settings",
+      "title": "Print Settings",
+      "subtitle": "B&W (₹2) vs Colour (₹10), Copies, Sidedness",
+      "badge": "Live Price"
+    },
+    {
+      "step": 4,
+      "id": "review_pay",
+      "title": "Pay & Confirm",
+      "subtitle": "UPI / Card Simulated Demo Payment",
+      "badge": "Instant Token"
+    },
+    {
+      "step": 5,
+      "id": "complete",
+      "title": "Print & Download",
+      "subtitle": "Collect print or download prepared PDF",
+      "badge": "10-Min Auto Cleanup"
+    }
+  ],
+  "image_urls": {
+    "kiosk_hero_qr": "https://images.unsplash.com/photo-1600147131759-880e94a6185f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxtb2JpbGUlMjBwaG9uZSUyMHFyJTIwc2NhbiUyMGtpb3NrfGVufDB8fHx8MTc5NDA0NjQwOXww&ixlib=rb-4.1.0&q=85",
+    "kiosk_mobile_flow": "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBwaG9uZSUyMHFyJTIwc2NhbiUyMGtpb3NrfGVufDB8fHx8MTc5NDA0NjQwOXww&ixlib=rb-4.1.0&q=85",
+    "paper_output": "https://images.unsplash.com/photo-1516409590654-e8d51fc2d25c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwcmludGluZyUyMGtpb3NrJTIwZG9jdW1lbnQlMjBwYXBlcnxlbnwwfHx8fDE3OTQwNDY0MDl8MA&ixlib=rb-4.1.0&q=85",
+    "printer_hardware": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwcmludGluZyUyMGtpb3NrJTIwZG9jdW1lbnQlMjBwYXBlcnxlbnwwfHx8fDE3OTQwNDY0MDl8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "layout_and_grids": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "kiosk_mode_toggle": "Provides dual-mode experience: Mobile User Mode (step-by-step phone view) & Terminal Kiosk Mode (full-screen station display with enlarged QR code for patron scanning)",
+    "mobile_optimization": "All bottom sheets, action buttons, and price summaries stick with backdrop blur for effortless 1-handed thumb reach on 375px+ devices",
+    "grid_structure": {
+      "main_workspace": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start",
+      "left_sidebar_steps": "lg:col-span-4 space-y-6",
+      "right_interactive_panel": "lg:col-span-8 space-y-6"
+    }
+  },
+  "motion_and_microinteractions": {
+    "engine": "Tailwind transitions + smooth state toggles",
+    "hover_lift": "hover:-translate-y-0.5 transition-all duration-200 ease-out",
+    "interactive_active": "active:scale-[0.98] transition-transform duration-100",
+    "sheet_flip_animation": "Subtle visual cue when toggling between single-sided and double-sided sheets",
+    "price_countup": "Instant live price badge highlight with pulse on option toggle",
+    "progress_shimmer": "Animated gradient shimmer on document upload and printing generation bars"
+  },
+  "accessibility_rules": {
+    "contrast": "All text tokens exceed WCAG AA 4.5:1 ratio against their declared surface backgrounds",
+    "test_attributes": "All buttons, inputs, file dropzones, tab triggers, price summaries, and tokens MUST have distinct data-testid attributes",
+    "screen_readers": "All icon-only buttons include aria-label; status updates (uploading, price change, timer countdown) are marked with aria-live='polite'"
+  },
+  "instructions_to_main_agent": [
+    "Retain the existing Flask backend routes (/upload, /calculate, /pay, /download/<filename>, /status) without modifying app.py or backend logic.",
+    "Implement the React frontend in /app/frontend/src/App.tsx and modular components under /app/frontend/src/components/.",
+    "Provide a realistic interactive simulation mode that connects smoothly to Flask API endpoints or local state fallbacks with seamless error recovery.",
+    "Feature a prominent Auto-Cleanup 10-Minute Countdown Clock with visual amber/red warning badges to assure customer privacy.",
+    "Add a dedicated 'Kiosk Display Mode' switch in the header so shop owners can put it on a counter tablet/monitor with a giant QR code for patrons to scan and open on mobile.",
+    "Support flexible page selections: 'all', comma-separated ('1, 3, 5'), ranges ('1-4'), and combinations ('1-3, 5, 8'). Provide instant validation with visual total page count.",
+    "Display a transparent, itemized pricing breakdown: Base Price (₹2 or ₹10) × Pages × Copies = Total INR ₹ with Sheet Count badge.",
+    "Include simulated demo payments with simulated UPI QR (Google Pay / PhonePe / Paytm styling) and Card options that simulate instant zero-friction confirmation.",
+    "Enable immediate PDF download and print completion token voucher generation."
+  ],
+  "data_test_ids": {
+    "kiosk_header": "kiosk-header",
+    "kiosk_mode_btn": "kiosk-mode-toggle-button",
+    "qr_kiosk_card": "qr-kiosk-display-card",
+    "file_dropzone": "pdf-file-dropzone",
+    "file_input": "pdf-file-input",
+    "upload_btn": "upload-submit-button",
+    "page_selection_all": "page-selection-all-btn",
+    "page_selection_custom": "page-selection-custom-input",
+    "print_mode_bw": "print-mode-bw-option",
+    "print_mode_color": "print-mode-color-option",
+    "copies_decrement": "copies-decrement-button",
+    "copies_increment": "copies-increment-button",
+    "copies_input": "copies-number-input",
+    "sidedness_single": "sidedness-single-option",
+    "sidedness_double": "sidedness-double-option",
+    "price_total_display": "price-total-display",
+    "pay_demo_btn": "pay-demo-submit-button",
+    "payment_method_upi": "payment-method-upi-option",
+    "payment_method_card": "payment-method-card-option",
+    "download_output_pdf": "download-output-pdf-button",
+    "countdown_timer_badge": "cleanup-countdown-timer-badge",
+    "new_job_btn": "start-new-print-job-button"
+  }
+}

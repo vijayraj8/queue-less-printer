@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: "Outfit Variable", "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
+  --color-page: #0b0f19;
+  --color-panel: #111827;
+  --color-panel-highlight: #1e293b;
+  --color-kiosk-dock: #0d1526;
+  --color-kiosk-light: #f8fafc;
+  --color-price-card: #091e3a;
+  --color-timer-bg: #2a1515;
+  --color-timer-fg: #fca5a5;
+  --color-badge-bw: #1e293b;
+  --color-badge-color: #1e1b4b;
+  --color-accent: #2563eb;
+  --color-accent-hover: #3b82f6;
+  --color-emerald-accent: #059669;
+  --color-amber-accent: #d97706;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-page);
+    color: #f8fafc;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  input,
+  select,
+  button {
+    font-family: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+  }
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ---------- ambient hero mesh ---------- */
+.hero-mesh {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18), transparent 70%),
+    linear-gradient(180deg, #0b0f19 0%, #111827 100%);
+}
+
+.dock-grid {
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 50% 10%, #000 0%, transparent 78%);
+}
+
+/* ---------- motion ---------- */
+@keyframes price-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.price-pop {
+  animation: price-pop 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -180% 0;
+  }
+  to {
+    background-position: 180% 0;
+  }
+}
+
+.shimmer {
+  background-image: linear-gradient(
+    100deg,
+    rgba(37, 99, 235, 0.15) 20%,
+    rgba(96, 165, 250, 0.75) 50%,
+    rgba(37, 99, 235, 0.15) 80%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.15s linear infinite;
+}
+
+@keyframes sheet-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(78deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.sheet-flip {
+  animation: sheet-flip 420ms ease-in-out;
+}
+
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+  }
+}
+
+.ring-pulse {
+  animation: ring-pulse 1.6s ease-out infinite;
+}
+
+.lift {
+  transition:
+    transform 200ms ease-out,
+    border-color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.lift:hover {
+  transform: translateY(-2px);
+}
+
+.press:active {
+  transform: scale(0.98);
+}
