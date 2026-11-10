@@ -11,7 +11,9 @@ const FLASK_ROUTES = ["/flask", "/upload", "/configure", "/payment", "/print", "
 
 export default defineConfig(({ mode }) => {
   // '' prefix so a non-VITE_ name (PUBLIC_APP_URL) can be read server-side here.
-  const env = loadEnv(mode, process.cwd(), "");
+  // Use the project root relative to the Vite process instead of the Node global
+  // to avoid relying on ambient Node typings in this TypeScript config.
+  const env = loadEnv(mode, ".", "");
   const publicAppUrl = env.PUBLIC_APP_URL || "http://localhost:3000";
   const isPublicHttps = publicAppUrl.startsWith("https://");
 
@@ -28,9 +30,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [tailwindcss()],
-    esbuild: {
-      jsx: "automatic",
-    },
     define: {
       __PUBLIC_APP_URL__: JSON.stringify(publicAppUrl),
     },

@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 .venv/
-=======
-﻿.venv/
->>>>>>> origin/main
 __pycache__/
 uploads/
 print_output/
 *.pyc
 .env
 queue_less_printer_qr.png
-<<<<<<< HEAD
 node_modules/
 dist/
-=======
->>>>>>> origin/main
